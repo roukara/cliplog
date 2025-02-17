@@ -6,6 +6,10 @@ DATE=$(date +%Y%m%d)
 OUTPUT_FILE="$HOME/.cliplog/$DATE.md"
 CURRENT_TIMESTAMP=$(date +%s)
 
+if [ ! -d "$HOME/.cliplog" ]; then
+    mkdir -p "$HOME/.cliplog"
+fi
+
 echo "# Clipboard History (Last 24 Hours)" > "$OUTPUT_FILE"
 echo "" >> "$OUTPUT_FILE"
 
