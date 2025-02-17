@@ -21,8 +21,18 @@ case "$1" in
     pkill -f cliplog_watcher.sh
     ;;
 
+  help|--help|-h)
+    echo "📌 Usage: cliplog {start|export|stop|help}"
+    echo ""
+    echo "Commands:"
+    echo "  start   - Start clipboard monitoring"
+    echo "  export  - Export clipboard history as Markdown"
+    echo "  stop    - Stop clipboard monitoring"
+    echo "  help    - Show this help message"
+    ;;
+
   *)
-    echo "📌 Usage: cliplog {start|export|stop}"
+    echo "📌 Usage: cliplog {start|export|stop|help}"
     exit 1
     ;;
 esac

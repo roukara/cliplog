@@ -7,6 +7,7 @@
 - **Start monitoring** clipboard changes (`cliplog start`)
 - **Export clipboard history** (last 24 hours) as a Markdown file (`cliplog export`)
 - **Stop monitoring** clipboard activity (`cliplog stop`)
+- **Show help** for commands (`cliplog help`)
 
 ## 📦 Installation
 
@@ -31,6 +32,7 @@ brew install cliplog
 cliplog start   # Start clipboard monitoring
 cliplog export  # Export clipboard history as Markdown
 cliplog stop    # Stop clipboard monitoring
+cliplog help    # Show help message
 ```
 
 The exported clipboard history will be saved in:
