@@ -1,0 +1,28 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+LOG_FILE="$HOME/.cliplog_history.log"
+
+case "$1" in
+  start)
+    echo "📋 Starting clipboard monitoring..."
+    nohup "$SCRIPT_DIR/cliplog_watcher.sh" >/dev/null 2>&1 &
+    echo "✅ Clipboard watcher is now running in the background."
+    ;;
+
+  export)
+    echo "📄 Exporting clipboard history from the last 24 hours..."
+    "$SCRIPT_DIR/cliplog_export.sh"
+    ;;
+
+  stop)
+    echo "🛑 Stopping clipboard monitoring..."
+    pkill -f cliplog_watcher.sh
+    ;;
+
+  *)
+    echo "📌 Usage: cliplog {start|export|stop}"
+    exit 1
+    ;;
+esac
